@@ -64,8 +64,8 @@ return [
     */
 
     'logo' => '',
-    'logo_img' => 'images/iconos/operario.png',
-    'logo_img_class' => 'brand-image-xs img-circle my-1',
+    'logo_img' => 'images/logo/logo_empresa_2.png',
+    'logo_img_class' => 'brand-image-xs my-1',
     'logo_img_xl' => 'images/logo/logo_empresa.png',
     'logo_img_xl_class' => 'brand-image-xl mx-3 my-1',
     'logo_img_alt' => 'Admin Logo',

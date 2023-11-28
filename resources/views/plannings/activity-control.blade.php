@@ -30,7 +30,7 @@
         <div class="col-md-4 mt-2">
             <div class="card">
                 <div class="card-header bg-secondary">
-                    Actividades registradas
+                    Actividades Registradas
                 </div>
                 <div id="entrada" class="list-group">
                     @foreach ($activities as $tarea)
@@ -56,7 +56,7 @@
         <div class="col-md-4 mt-2">
             <div class="card">
                 <div class="card-header bg-warning text-white">
-                    Actividades en proceso
+                    Actividades En proceso
                 </div>
                 <div id="proceso" class="list-group">
                     @foreach ($activities as $tarea)
@@ -82,7 +82,7 @@
         <div class="col-md-4 mt-2">
             <div class="card">
                 <div class="card-header bg-success">
-                    Actividades completadas
+                    Actividades Completadas
                     @if($avance == 100)
                     <div style="float:right;display:inline-block">
                         <svg onclick="selectFile()" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-camera ml-1" viewBox="0 0 16 16">

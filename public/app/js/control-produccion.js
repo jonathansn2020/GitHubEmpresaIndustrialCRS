@@ -141,14 +141,14 @@ $(".task-button").on("click", function () {
                 $('#status-a').removeClass('badge');
                 if (actividad.status == "Completada") {
                     $('#status-a').removeClass('bg-warning');
-                    $('#status-a').removeClass('bg-info');
+                    $('#status-a').removeClass('bg-secondary');
                     $('#status-a').removeClass('bg-success');
                     $('#status-a').addClass('badge');
                     $('#status-a').addClass('bg-success');
                 }
                 if (actividad.status == "Proceso") {
                     $('#status-a').removeClass('bg-success');
-                    $('#status-a').removeClass('bg-info');
+                    $('#status-a').removeClass('bg-secondary');
                     $('#status-a').removeClass('bg-warning');
                     $('#status-a').addClass('badge');
                     $('#status-a').addClass('bg-warning');
@@ -158,9 +158,20 @@ $(".task-button").on("click", function () {
                     $('#status-a').removeClass('bg-warning');
                     $('#status-a').removeClass('bg-info');
                     $('#status-a').addClass('badge');
-                    $('#status-a').addClass('bg-info');
+                    $('#status-a').addClass('bg-secondary');
                 }
-                $('#status-a').text(actividad.status);
+
+                if(actividad.status == "Entrada"){
+                    $('#status-a').text('Registrada')
+                }
+                
+                if(actividad.status == "Proceso"){
+                    $('#status-a').text('En proceso')
+                }
+                if(actividad.status == "Completada"){
+                    $('#status-a').text(actividad.status);
+                }
+                
                 $('#stage_id-a').text(actividad.etapa);
             }
 

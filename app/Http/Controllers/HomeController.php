@@ -22,8 +22,8 @@ class HomeController extends Controller
             $mes = 'Setiembre';
         } else {
             $mes;
-        }
-
+        }        
+        
         $order_day = DB::table('orders')
             ->select(DB::raw("count(*) as cantidad_ordenes"))
             ->whereMonth('created_at', date('m'))
