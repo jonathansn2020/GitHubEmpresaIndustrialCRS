@@ -194,7 +194,7 @@
             series: {
                 borderWidth: 0,
                 dataLabels: {
-                    enabled: true,
+                    //enabled: true,
                     format: '{point.y:.f}'
                 }
             }
