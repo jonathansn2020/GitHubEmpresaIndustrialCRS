@@ -28,7 +28,7 @@ class CustomerController extends Controller
     }    
     
     public function show(Order $order)
-    {
+    {        
         $order = Order::join('projects','projects.order_id','=','orders.id')
                  ->join('activity_project','activity_project.project_id','=','projects.id')
                  ->select('orders.order_business','orders.expected_date','orders.end_date',

@@ -14,7 +14,7 @@ class ReporteGraficoController extends Controller
         $orders = DB::table('orders')
             ->select(DB::raw("count(*) as cantidad, DATE_FORMAT(expected_date, '%M') as mes"))
             ->whereMonth('end_date', '>=', DB::raw("month(expected_date)"))
-            ->whereDay('end_date', '>', DB::raw("day(expected_date)"))            
+            ->whereDay('end_date', '>', DB::raw("day(expected_date)"))
             ->whereYear('expected_date', date('Y'))
             ->groupBy('mes')
             ->orderBy('expected_date')
@@ -251,4 +251,85 @@ class ReporteGraficoController extends Controller
 
         return response()->json($data);
     }
+
+    public function reworkPercentage()
+    {
+
+        $porcentaje_reprocesos = [];
+        $promedio_reprocesos = [];
+        $suma = 0;
+        $i = 0;
+
+        $unid_reprocesadas = DB::table('reworks')
+            ->select(DB::raw("count(*) as reprocesos, reworks.start_date as fecha_registro"))
+            ->orderBy('reworks.start_date')
+            ->groupBy('reworks.start_date')
+            ->get();
+
+
+        $unid_producidas = DB::table('projects')
+            ->select(DB::raw("count(*) as radiadores, projects.end_date_p as fecha"))
+            ->whereNotNull('projects.end_date_p')
+            ->orderBy('projects.end_date_p')
+            ->groupBy('projects.end_date_p')
+            ->get();
+
+
+        foreach ($unid_producidas as $unid_p) {
+            foreach ($unid_reprocesadas as $unid_r) {
+                if ($unid_p->fecha == $unid_r->fecha_registro) {
+                    $i++;
+                    $cantidad = $unid_r->reprocesos / $unid_p->radiadores;
+                    $suma = $suma + $cantidad;
+                    $porcentaje_reprocesos[] = ['name' => date("d-m-Y", strtotime($unid_r->fecha_registro)), 'y' => $cantidad];
+                }
+            }            
+        }
+
+        $promedio_reprocesos[] = ['name' => 'promedio', 'y' => $suma / $i];         
+
+        return view('graficos.reprocesos', ['data' => json_encode($porcentaje_reprocesos), 'data2' => json_encode($promedio_reprocesos)]);
+    }
+
+    public function grafico_reproceso_porcentaje(Request $request)
+    {
+        $data = [];
+        $promedio_reprocesos = [];
+        $suma = 0;
+        $i = 0;
+
+        $start_date_i = $request->end_date_i;
+        $start_date_f = $request->end_date_f;
+
+        $unid_reprocesadas = DB::table('reworks')
+            ->select(DB::raw("count(*) as reprocesos, reworks.start_date as fecha_registro"))
+            ->whereBetween('reworks.start_date',[$start_date_i, $start_date_f])   
+            ->orderBy('reworks.start_date')
+            ->groupBy('reworks.start_date')
+            ->get();
+        
+        $unid_producidas = DB::table('projects')
+            ->select(DB::raw("count(*) as radiadores, projects.end_date_p as fecha"))
+            ->whereNotNull('projects.end_date_p')
+            ->whereBetween('projects.end_date_p',[$start_date_i, $start_date_f])  
+            ->orderBy('projects.end_date_p')
+            ->groupBy('projects.end_date_p')
+            ->get();
+
+        foreach ($unid_producidas as $unid_p) {
+            foreach ($unid_reprocesadas as $unid_r) {
+                if ($unid_p->fecha == $unid_r->fecha_registro) {
+                    $i++;
+                    $cantidad = $unid_r->reprocesos / $unid_p->radiadores;
+                    $suma = $suma + $cantidad;
+                    $data[] = ['name' => date("d-m-Y", strtotime($unid_r->fecha_registro)), 'y' => $cantidad];
+                }
+            }
+        }
+        
+        $promedio_reprocesos[] = ['name' => 'promedio', 'y' => $suma / $i];   
+        
+        return response()->json(['dataA' => $data, 'dataB' => $promedio_reprocesos]);
+    }
+
 }

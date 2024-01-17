@@ -134,7 +134,12 @@
                 },
                 {
                     data: function(data) {
-                        return '<div class="text-center"><a class="btn btn-primary btn-sm mr-1" id="" data-bs-toggle="modal" data-bs-target="#customer-show-modal" data-toggle="tooltip" data-placement="top" title="Ver registro" onclick="show_order_customer(' + data.id + ')"><i class="fas fa-eye"></i></a></div>'
+                        if(data.status == 1){
+                            return '<div class="text-center"><a class="btn btn-primary btn-sm mr-1 disabled" id="" data-bs-toggle="modal" data-bs-target="" data-toggle="" data-placement="top" title="Ver registro"><i class="fas fa-eye"></i></a></div>'
+                        }
+                        else{
+                            return '<div class="text-center"><a class="btn btn-primary btn-sm mr-1" id="" data-bs-toggle="modal" data-bs-target="#customer-show-modal" data-toggle="tooltip" data-placement="top" title="Ver registro" onclick="show_order_customer(' + data.id + ')"><i class="fas fa-eye"></i></a></div>'
+                        }                        
                     }
                 },
 

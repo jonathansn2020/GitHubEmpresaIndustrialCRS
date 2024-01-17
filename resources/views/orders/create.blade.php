@@ -75,18 +75,18 @@
                         </div>
                         <div class="row">
                             <div class="mb-3 col-12 table-responsive">
-                                <div class="col-form-label col-form-label-sm py-2"><strong>Se agradece atender en lo siguiente:</strong></div>
+                                <div class="col-form-label col-form-label-sm py-2"><strong style="font-size:12px">Se agradece atender en lo siguiente:</strong></div>
                                 <table class="table table-bordered table-sm table-hover text-center">
-                                    <thead style="color:#ffffff; background-color: rgb(33,136,201)">
+                                    <thead style="color:#ffffff; background-color: rgb(33,136,201);font-size:12.5px">
                                         <tr>
-                                            <th class="align-text-top text-sm" scope="col">Item</th>
-                                            <th class="align-text-top text-sm" scope="col">Proyecto</th>
-                                            <th class="align-text-top text-sm" scope="col">Fecha Inicio</th>
-                                            <th class="align-text-top text-sm" scope="col">Fecha Prevista</th>
-                                            <th class="align-text-top text-sm" scope="col"><i class="fas fa-trash-alt"></th>
+                                            <th class="align-text-top" scope="col">Item</th>
+                                            <th class="align-text-top" scope="col">Proyecto</th>
+                                            <th class="align-text-top" scope="col">Fecha Inicio</th>
+                                            <th class="align-text-top" scope="col">Fecha Prevista</th>
+                                            <th class="align-text-top" scope="col"><i class="fas fa-trash-alt"></th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-sm" id="list-products">
+                                    <tbody style="font-size:12px" id="list-products">
                                         <tr id="nodata">
                                             <td colspan="12">No hay datos ingresados...</td>
                                         </tr>

@@ -17,6 +17,8 @@ class HomeController extends Controller
 
         $date = Carbon::now()->locale('es');
         $mes = ucfirst($date->monthName);
+        $pedidos=[];   
+        $total_orden_mes=[];     
         
         if ($mes == 'September') {
             $mes = 'Setiembre';

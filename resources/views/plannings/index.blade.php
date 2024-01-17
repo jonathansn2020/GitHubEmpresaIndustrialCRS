@@ -17,7 +17,7 @@
         <input type="hidden" class="can_graf_rework" value="{{auth()->user()->can('Ver Gráfico de Reprocesos de Radiadores')}}">
         <input type="hidden" class="can_control_view" value="{{auth()->user()->can('Ver Detalle de Reprocesos de Radiadores')}}">
 
-        <div class="card-body table-responsive" style="font-size:13.3px">
+        <div class="card-body table-responsive" style="font-size:13px">
             <table id="myTableProduccion" class="table table-bordered table-hover text-center" width="100%">
                 <thead style="background-color: rgb(204,204,204);">
                     <tr>

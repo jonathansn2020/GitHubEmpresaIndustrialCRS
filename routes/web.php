@@ -126,6 +126,9 @@ Route::get('/grafico/ordertime', [ReporteGraficoController::class, 'orderLate'])
 Route::post('/grafico/retraso', [ReporteGraficoController::class, 'grafico_orden_retraso']);
 Route::get('/grafico/orderlate', [ReporteGraficoController::class, 'orderTime'])->name('graficos.orders_time');
 Route::post('/grafico/atiempo', [ReporteGraficoController::class, 'grafico_orden_tiempo']);
+Route::get('/grafico/rework', [ReporteGraficoController::class, 'reworkPercentage'])->name('graficos.reprocesos');
+Route::post('/grafico/reworkG', [ReporteGraficoController::class, 'grafico_reproceso_porcentaje'])->name('graficos.reworks');
+
 
 //Rutas de reportes pdf
 Route::get('/reporte/order', [ReportePdfController::class, 'orderIndex'])->middleware('can:Ver reporte pdf de ordenes entregadas a tiempo')->name('pdf.orderIndex');

@@ -29,7 +29,7 @@ class ActivityController extends Controller
                 'stages.name as fase'
             )
             ->orderby('activities.id')
-            ->paginate();
+            ->paginate();        
 
         return response()->json($activities);
     }

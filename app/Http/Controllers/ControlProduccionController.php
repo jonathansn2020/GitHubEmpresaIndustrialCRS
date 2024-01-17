@@ -131,6 +131,9 @@ class ControlProduccionController extends Controller
             $avance = $project->progress;
         }
         if ($request->origen == "proceso" && $request->estado == "completada") {
+
+            $message = true;
+
             $activity->projects()->updateExistingPivot($request->idproject, [
                 'end_date'    => $date_now,
             ]);
@@ -172,6 +175,9 @@ class ControlProduccionController extends Controller
             $order->save();
         }
         if ($request->origen == "completada" && $request->estado == "proceso") {
+
+            $message = false;
+
             $activity->projects()->updateExistingPivot($request->idproject, [
                 'end_date'    => null,
             ]);
@@ -212,6 +218,9 @@ class ControlProduccionController extends Controller
             $order->save();
         }
         if ($request->origen == "completada" && $request->estado == "entrada") {
+
+            $message = false;
+            
             $activity->projects()->updateExistingPivot($request->idproject, [
                 'end_date'    => null,
             ]);
@@ -251,7 +260,7 @@ class ControlProduccionController extends Controller
             $project->save();
         }
 
-        return response()->json($avance);
+        return response()->json(['avance' => $avance, 'message' => $message]);
     }
 
     public function upload(LoadProject $request){

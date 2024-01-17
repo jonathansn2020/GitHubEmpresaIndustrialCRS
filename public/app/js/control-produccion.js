@@ -56,23 +56,30 @@ $(document).ready(function () {
                     },
                     success: function (data) {
                         console.log(data);
+                        
+                        if(data['message'] == true){
+                            toastr.success("Actividad completada con exito!!");
+                        }
+                        if(data['message'] == false){
+                            toastr.error("Se ha producido un reproceso!!");
+                        }                        
 
-                        if (data < 40) {
-                            $(".progress-project").css({ 'width': data + '%' });
-                            $(".progress-project-des").text(data + '%' + ' completado');
+                        if (data['avance'] < 40) {
+                            $(".progress-project").css({ 'width': data['avance'] + '%' });
+                            $(".progress-project-des").text(data['avance'] + '%' + ' completado');
                             $(".progress-project").removeClass('bg-warning');
                             $(".progress-project").removeClass('bg-success');
                             $(".progress-project").addClass('bg-secondary')
                         }
-                        if (data >= 40 && data < 80) {
-                            $(".progress-project").css({ 'width': data + '%' });
-                            $(".progress-project-des").text(data + '%' + ' completado');
+                        if (data['avance'] >= 40 && data['avance'] < 80) {
+                            $(".progress-project").css({ 'width': data['avance'] + '%' });
+                            $(".progress-project-des").text(data['avance'] + '%' + ' completado');
                             $(".progress-project").removeClass('bg-secondary');
                             $(".progress-project").addClass('bg-warning')
                         }
-                        if (data >= 80) {
-                            $(".progress-project").css({ 'width': data + '%' });
-                            $(".progress-project-des").text(data + '%' + ' completado');
+                        if (data['avance'] >= 80) {
+                            $(".progress-project").css({ 'width': data['avance'] + '%' });
+                            $(".progress-project-des").text(data['avance'] + '%' + ' completado');
                             $(".progress-project").removeClass('bg-warning');
                             $(".progress-project").addClass('bg-success')
                         }
