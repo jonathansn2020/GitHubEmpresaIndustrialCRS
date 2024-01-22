@@ -85,9 +85,9 @@
                                 <label class="col-form-label col-form-label-sm" for="status">Estado:</label>
                                 <select class="form-control form-control-sm" name="status">
                                     <option value="">Seleccionar...</option>
-                                    <option value="1" {{old('status', $order[0]->status) == '1' ? 'selected' : ''}}>Por Planificar</option>
+                                    <option value="1" {{old('status', $order[0]->status) == '1' ? 'selected' : ''}}>Registrada</option>
                                     <option value="2" {{old('status', $order[0]->status) == '2' ? 'selected' : ''}}>En Proceso</option>
-                                    <option value="3" {{old('status', $order[0]->status) == '3' ? 'selected' : ''}}>Finalizado</option>
+                                    <option value="3" {{old('status', $order[0]->status) == '3' ? 'selected' : ''}}>Completada</option>
                                 </select>
                                 @error('status')
                                 <small class="text-danger">
@@ -98,7 +98,7 @@
                         </div>
                         <div class="row">
                             <div class="mb-2 col-12">
-                                <label class="col-form-label col-form-label-sm" for="note">Nota <img class="pl-2 img-fluid" style="height: 30px;" src="{{asset('images/iconos/apuntes-de-clase.png')}}" alt="nootebok"></label>
+                                <label class="col-form-label col-form-label-sm" for="note">Nota:</label>
                                 <textarea class="form-control form-control-sm" name="note" id="note" cols="30" rows="3" placeholder="Por favor ingrese una descripción">{{old('note',$order[0]->note)}}</textarea>
                             </div>
                         </div>

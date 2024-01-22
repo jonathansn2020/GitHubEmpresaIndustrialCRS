@@ -91,9 +91,9 @@
                             <label class="col-form-label col-form-label-sm" for="status">Estado:</label>
                             <select class="form-control form-control-sm" name="status" id="status">
                                 <option value="">Seleccionar...</option>
-                                <option value="1">Por Planificar</option>
+                                <option value="1">Registrada</option>
                                 <option value="2">En Proceso</option>
-                                <option value="3">Finalizado</option>
+                                <option value="3">Completada</option>
                             </select>
                             <small style="font-size:12.5px" id="status-error"></small>
                         </div>

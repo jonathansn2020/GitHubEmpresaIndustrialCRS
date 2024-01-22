@@ -57,15 +57,15 @@
                             <label class="col-form-label col-form-label-sm" for="status_show">Estado:</label>
                             <select class="form-control form-control-sm bg-white" disabled name="status" id="status_show">
                                 <option value="">Seleccionar...</option>
-                                <option value="1">Por Planificar</option>
+                                <option value="1">Registrada</option>
                                 <option value="2">En Proceso</option>
-                                <option value="3">Finalizado</option>
+                                <option value="3">Completada</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-2 col-12">
-                            <label class="col-form-label col-form-label-sm" for="note_show">Nota <img class="pl-2 img-fluid" style="height: 30px;" src="{{asset('images/iconos/apuntes-de-clase.png')}}" alt="nootebok"></label>
+                            <label class="col-form-label col-form-label-sm" for="note_show">Nota:</label>
                             <textarea class="form-control form-control-sm bg-white" name="note" id="note_show" cols="30" rows="3" placeholder="Por favor ingrese una descripción" readonly></textarea>
                         </div>
                     </div>

@@ -108,13 +108,13 @@ class HomeController extends Controller
 
         foreach ($orders as $order) {
             if ($order->estado == '1') {
-                $pedidos[] = ['name' => 'Por Planificar', 'data' => [$order->cantidad]];
+                $pedidos[] = ['name' => 'Registrada', 'data' => [$order->cantidad]];
             }
             if ($order->estado == '2') {
                 $pedidos[] = ['name' => 'En Proceso', 'data' => [$order->cantidad]];
             }
             if ($order->estado == '3') {
-                $pedidos[] = ['name' => 'Finalizado', 'data' => [$order->cantidad]];
+                $pedidos[] = ['name' => 'Completada', 'data' => [$order->cantidad]];
             }
         }
 

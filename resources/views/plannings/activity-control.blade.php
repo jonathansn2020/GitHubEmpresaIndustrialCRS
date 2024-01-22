@@ -32,9 +32,9 @@
         <div class="card-header bg-secondary">
             Actividades Registradas
         </div>
-        <div id="entrada" class="list-group">
+        <div id="registrada" class="list-group">
             @foreach ($activities as $tarea)
-            @if($tarea->pivot->status == 'Entrada')
+            @if($tarea->pivot->status == 'Registrada')
             <div class="list-group-item col-form-label col-form-label-sm" data-id="{{ $tarea->id }}">
                 {{ $tarea->name }}
                 <div class="mt-1">

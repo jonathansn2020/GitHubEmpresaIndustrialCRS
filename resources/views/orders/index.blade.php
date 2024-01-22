@@ -41,9 +41,9 @@
                 <small class="fw-bold">Estado:</small>
                 <select class="form form-control form-control-sm border-info" name="filter_status" id="filter_status">
                     <option value="">TODOS</option>
-                    <option value="1">POR PLANIFICAR</option>
+                    <option value="1">REGISTRADA</option>
                     <option value="2">EN PROCESO</option>  
-                    <option value="3">FINALIZADO</option>                             
+                    <option value="3">COMPLETADA</option>                             
                 </select>
             </div>            
         </div>

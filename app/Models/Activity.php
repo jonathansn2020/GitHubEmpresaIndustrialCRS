@@ -9,9 +9,9 @@ class Activity extends Model
 {
     use HasFactory;
 
-    const ENTRADA   = 'Entrada';
-    const PROCESO   = 'Proceso';
-    const COMPLETADA = 'Completada';
+    const REGISTRADA   = 'Registrada';
+    const EN_PROCESO   = 'Proceso';
+    const COMPLETADA   = 'Completada';
 
     protected $fillable = ['name','stage_id'];
 

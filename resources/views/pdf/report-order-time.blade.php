@@ -48,7 +48,7 @@
                         @endif
 
                         @if($order->status == '1')
-                        <td>Por planificar</td>
+                        <td>Registrada</td>
                         @endif
 
                         @if($order->status == '2')
@@ -56,7 +56,7 @@
                         @endif
 
                         @if($order->status == '3')
-                        <td>Finalizado</td>
+                        <td>Completada</td>
                         @endif
                     </tr>
                     @endforeach

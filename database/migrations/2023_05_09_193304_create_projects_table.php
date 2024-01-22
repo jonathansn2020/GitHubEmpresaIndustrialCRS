@@ -28,7 +28,7 @@ return new class extends Migration
             $table->date('expected_date_p');
             $table->date('end_date_p')->nullable();
             $table->string('url_photo', 2048)->nullable();                  
-            $table->enum('status', [Project::POR_PLANIFICAR, Project::EN_PROCESO, Project::FINALIZADO])->default(Project::POR_PLANIFICAR);            
+            $table->enum('status', [Project::REGISTRADA, Project::EN_PROCESO, Project::COMPLETADA])->default(Project::REGISTRADA);            
             
             $table->unsignedBigInteger('order_id');
 

@@ -36,7 +36,7 @@ $(document).ready(function () {
             if (origen == "entrada" && estado == "completada") {
                 Swal.fire(
                     'Considerar lo siguiente!',
-                    'La actividad de entrada debe ser asignada primero a la lista de proceso, para continuar con el flujo del control correcto.',
+                    'La actividad registrada debe ser asignada primero a la lista de proceso, para continuar con el flujo del control correcto.',
                     'warning'
                 )
                     .then(function () {
@@ -160,7 +160,7 @@ $(".task-button").on("click", function () {
                     $('#status-a').addClass('badge');
                     $('#status-a').addClass('bg-warning');
                 }
-                if (actividad.status == "Entrada") {
+                if (actividad.status == "Registrada") {
                     $('#status-a').removeClass('bg-success');
                     $('#status-a').removeClass('bg-warning');
                     $('#status-a').removeClass('bg-info');
@@ -168,7 +168,7 @@ $(".task-button").on("click", function () {
                     $('#status-a').addClass('bg-secondary');
                 }
 
-                if(actividad.status == "Entrada"){
+                if(actividad.status == "Registrada"){
                     $('#status-a').text('Registrada')
                 }
                 

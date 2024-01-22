@@ -410,12 +410,12 @@ return [
                     'can'    => 'Ver Gráfico Ordenes Entregadas a Tiempo',
                     'route'   => 'graficos.orders_time'
                 ],
-                [
+                /*[
                     'text'  => 'Gráfico porcentaje de reprocesos',
                     'icon'  => 'fas fa-chart-bar',
                     //'can'    => 'Ver Gráfico Porcentaje de Reprocesos',
                     'route'   => 'graficos.reprocesos'
-                ],
+                ],*/
             ]
         ],
         [

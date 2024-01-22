@@ -25,7 +25,7 @@ return new class extends Migration
             $table->text('note')->nullable();
             $table->string('order_business');
             $table->string('cod_document', 15)->unique();
-            $table->enum('status', [Order::POR_PLANIFICAR, Order::EN_PROCESO, Order::FINALIZADO])->default(Order::POR_PLANIFICAR);
+            $table->enum('status', [Order::REGISTRADA, Order::EN_PROCESO, Order::COMPLETADA])->default(Order::REGISTRADA);
 
             $table->unsignedBigInteger('user_id');
 

@@ -51,5 +51,26 @@ class OperatorSeeder extends Seeder
             'email'     => 'operario5@gmail.com',
             'position'  => 'Operario 5'       
         ]);
+        Operator::create([
+            'name'      => 'Operador 6',
+            'document'  => '41312200',
+            'phone'     => '93340914',
+            'email'     => 'operario6@gmail.com',
+            'position'  => 'Operario 6'       
+        ]);
+        Operator::create([
+            'name'      => 'Operador 7',
+            'document'  => '48460973',
+            'phone'     => '98743591',
+            'email'     => 'operario7@gmail.com',
+            'position'  => 'Operario 7'       
+        ]);
+        Operator::create([
+            'name'      => 'Operador 8',
+            'document'  => '42313914',
+            'phone'     => '98941501',
+            'email'     => 'operario8@gmail.com',
+            'position'  => 'Operario 8'       
+        ]);
     }
 }

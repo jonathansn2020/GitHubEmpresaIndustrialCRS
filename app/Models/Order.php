@@ -12,9 +12,9 @@ class Order extends Model
 
     protected $fillable = ['user_id', 'requested', 'phone', 'email', 'delivery_place', 'order_business', 'expected_date', 'end_date', 'note', 'cod_document', 'status'];
     
-    const POR_PLANIFICAR  = 1;
-    const EN_PROCESO      = 2;
-    const FINALIZADO      = 3;
+    const REGISTRADA  = 1;
+    const EN_PROCESO  = 2;
+    const COMPLETADA  = 3;
 
     //relacion uno a muchos
     public function projects(){

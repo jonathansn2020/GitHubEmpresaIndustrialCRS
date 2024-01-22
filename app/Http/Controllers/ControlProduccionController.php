@@ -66,7 +66,7 @@ class ControlProduccionController extends Controller
 
     public function update(Request $request, $id)
     {
-        $avance = "";
+        $avance = "";        
         $i = 0;
 
         date_default_timezone_set("America/Lima");
@@ -83,7 +83,8 @@ class ControlProduccionController extends Controller
         $activities = $project->activities;
         $order = $project->order;
 
-        if (($request->origen == "entrada" && $request->estado == "proceso")) {
+        if (($request->origen == "registrada" && $request->estado == "proceso")) {
+            $message = "ninguno";
             $activity->projects()->updateExistingPivot($request->idproject, [
                 'end_date'    => null,
                 'true_start'  => $date_now
@@ -112,13 +113,15 @@ class ControlProduccionController extends Controller
         }
 
 
-        if (($request->origen == "entrada" && $request->estado == "entrada")) {
+        if (($request->origen == "registrada" && $request->estado == "registrada")) {
+            $message = "ninguno";
             $activity->projects()->updateExistingPivot($request->idproject, [
                 'end_date'    => null
             ]);
             $avance = $project->progress;
         }
-        if (($request->origen == "proceso" && $request->estado == "entrada") || ($request->origen == "proceso" && $request->estado == "proceso")) {
+        if (($request->origen == "proceso" && $request->estado == "registrada") || ($request->origen == "proceso" && $request->estado == "proceso")) {
+            $message = "ninguno";
             $activity->projects()->updateExistingPivot($request->idproject, [
                 'end_date'    => null,
             ]);
@@ -217,7 +220,7 @@ class ControlProduccionController extends Controller
             $project->save();
             $order->save();
         }
-        if ($request->origen == "completada" && $request->estado == "entrada") {
+        if ($request->origen == "completada" && $request->estado == "registrada") {
 
             $message = false;
             
@@ -237,7 +240,7 @@ class ControlProduccionController extends Controller
             ]);
 
             foreach ($activities as $a) {
-                if ($a->pivot->status == "Entrada") {
+                if ($a->pivot->status == "Registrada") {
                     $i++;
                     break;
                 }

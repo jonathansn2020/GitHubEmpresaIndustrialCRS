@@ -86,13 +86,13 @@ $(document).ready(function () {
             {
                 data: function (data) {
                     if (data.status == 1) {
-                        return '<div class="badge bg-secondary mt-2">Por Planificar</div>';
+                        return '<div class="badge bg-secondary mt-2">Registrada</div>';
                     }
                     else if (data.status == 2) {
                         return '<div class="badge bg-warning mt-2">En Proceso</div>';
                     }
                     else if (data.status == 3) {
-                        return '<div class="badge bg-success mt-2">Finalizado</div>';
+                        return '<div class="badge bg-success mt-2">Completada</div>';
                     }
                 }
 

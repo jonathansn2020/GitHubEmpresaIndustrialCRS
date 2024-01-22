@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date('true_start')->nullable();
             $table->date('end_date')->nullable();
             $table->integer('position')->nullable();
-            $table->enum('status', [Activity::ENTRADA, Activity::PROCESO, Activity::COMPLETADA])->default(Activity::ENTRADA);            
+            $table->enum('status', [Activity::REGISTRADA, Activity::EN_PROCESO, Activity::COMPLETADA])->default(Activity::REGISTRADA);            
 
 
             $table->unsignedBigInteger('activity_id');

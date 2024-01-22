@@ -63,7 +63,7 @@ class PlanningController extends Controller
                         'priority' => $actividad->priority,
                         'start_date'    => $data_start->format('Y-m-d'),
                         'expected_date' => $data_expected->format('Y-m-d'),
-                        'status' => 'Entrada',
+                        'status' => 'Registrada',
                         'project_id' => $actividad->project_id,
                         'operator_id' => $actividad->operator_id
                     ]
