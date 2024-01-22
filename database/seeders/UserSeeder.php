@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'name'      => 'Doris Gamarra Huamantalla',
             'email'     => 'luzidori.19@gmail.com',
             'password'  => bcrypt('123456789'),
-            'profile_photo_path'  => 'storage/users/admin.jpg'
+            'profile_photo_path'  => 'storage/users/gamarra.jpg'
         ]);
 
         $user->assignRole('Administrador');
