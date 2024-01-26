@@ -17,60 +17,40 @@ class OperatorSeeder extends Seeder
     public function run()
     {
         Operator::create([
-            'name'      => 'Operador 1',
-            'document'  => '44395959',
-            'phone'     => '984858583',
-            'email'     => 'operario1@gmail.com',
-            'position'  => 'Operario 1'       
+            'name'      => 'Gino Octavio Peña Lucero',
+            'document'  => '41805280',
+            'phone'     => '984302540',
+            'email'     => 'gino_peña@gmail.com',
+            'position'  => 'Jefatura Comercial'       
         ]);
         Operator::create([
-            'name'      => 'Operador 2',
-            'document'  => '40395913',
+            'name'      => 'Heraclides Prado Espinoza',
+            'document'  => '08545223',
             'phone'     => '994854501',
-            'email'     => 'operario2@gmail.com',
-            'position'  => 'Operario 2'       
+            'email'     => 'hprado_esp@gmail.com',
+            'position'  => 'Operario Producción'       
         ]);
         Operator::create([
-            'name'      => 'Operador 3',
-            'document'  => '44300911',
+            'name'      => 'Carlos Ananias Zarate Martinez',
+            'document'  => '47455774',
             'phone'     => '92851500',
-            'email'     => 'operario3@gmail.com',
-            'position'  => 'Operario 3'       
+            'email'     => 'carlos_azm@gmail.com',
+            'position'  => 'Operario Soldador'       
         ]);
         Operator::create([
-            'name'      => 'Operador 4',
-            'document'  => '41300911',
+            'name'      => 'Alex Cruz Calderon',
+            'document'  => '06898605',
             'phone'     => '990054504',
-            'email'     => 'operario4@gmail.com',
-            'position'  => 'Operario 4'       
+            'email'     => 'alex_cruzc@gmail.com',
+            'position'  => 'Asistente de Producción'       
         ]);
         Operator::create([
-            'name'      => 'Operador 5',
-            'document'  => '40310219',
+            'name'      => 'Daniel Inga Mas',
+            'document'  => '10449870',
             'phone'     => '98841511',
-            'email'     => 'operario5@gmail.com',
-            'position'  => 'Operario 5'       
+            'email'     => 'daniel_ingm@gmail.com',
+            'position'  => 'Asistente de Producción'       
         ]);
-        Operator::create([
-            'name'      => 'Operador 6',
-            'document'  => '41312200',
-            'phone'     => '93340914',
-            'email'     => 'operario6@gmail.com',
-            'position'  => 'Operario 6'       
-        ]);
-        Operator::create([
-            'name'      => 'Operador 7',
-            'document'  => '48460973',
-            'phone'     => '98743591',
-            'email'     => 'operario7@gmail.com',
-            'position'  => 'Operario 7'       
-        ]);
-        Operator::create([
-            'name'      => 'Operador 8',
-            'document'  => '42313914',
-            'phone'     => '98941501',
-            'email'     => 'operario8@gmail.com',
-            'position'  => 'Operario 8'       
-        ]);
+        
     }
 }
