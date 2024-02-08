@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
+use Illuminate\Validation\Rule;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,14 +25,16 @@ class UpdateUser extends FormRequest
     public function rules()
     {
         return [
-            'name'     => 'required',            
+            'name'     => 'required', 
+            'email'    => ['required','email', Rule::unique('users')->ignore($this->user)]                
         ];
     }
 
     public function attributes()
     {
         return [
-            'name'     => 'nombre de usuario',                    
+            'name'     => 'nombre de usuario', 
+            'email'    => 'email'                   
         ];
     }
 }

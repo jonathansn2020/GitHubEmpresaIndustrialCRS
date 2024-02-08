@@ -13,8 +13,9 @@ class ReporteGraficoController extends Controller
         $orders_month = [];
         $orders = DB::table('orders')
             ->select(DB::raw("count(*) as cantidad, DATE_FORMAT(expected_date, '%M') as mes"))
-            ->whereMonth('end_date', '>=', DB::raw("month(expected_date)"))
-            ->whereDay('end_date', '>', DB::raw("day(expected_date)"))
+            ->where('end_date','>', DB::raw("expected_date"))
+            //->whereMonth('end_date', '>=', DB::raw("month(expected_date)"))
+            //->whereDay('end_date', '>', DB::raw("day(expected_date)"))
             ->whereYear('expected_date', date('Y'))
             ->groupBy('mes')
             ->orderBy('expected_date')
@@ -78,8 +79,9 @@ class ReporteGraficoController extends Controller
 
         $orders_filter = DB::table('orders')
             ->select(DB::raw("count(*) as cantidad, DATE_FORMAT(expected_date, '%M') as mes"))
-            ->whereDay('end_date', '>', DB::raw("day(expected_date)"))
-            ->whereMonth('end_date', '>=', DB::raw("month(expected_date)"))
+            ->where('end_date','>', DB::raw("expected_date"))
+            //->whereDay('end_date', '>', DB::raw("day(expected_date)"))
+            //->whereMonth('end_date', '>=', DB::raw("month(expected_date)"))
             ->whereMonth('expected_date', '>=', $mes_inicio)
             ->whereMonth("expected_date", '<=', $mes_fin)
             ->whereYear('expected_date', $año)

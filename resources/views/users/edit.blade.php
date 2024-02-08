@@ -30,9 +30,20 @@
                         </span>
                     @enderror
                 </div>
-
                 <div class="form-group">
-                    {!! Form::label('roles', 'Lista de Roles: ', ['style' => 'font-size:14px']) !!}
+                    {!! Form::label('email', 'Email: ', ['style' => 'font-size:14px']) !!}
+                    {!! Form::text('email', null, [
+                            'class' => 'form-control form-control-sm ' . ($errors->has('email') ? 'is-invalid' : ''),
+                            'placeholder' => 'Escriba su email',
+                    ]) !!}
+                    @error('email')
+                            <span class="invalid-feedback">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    {!! Form::label('roles', 'Rol: ', ['style' => 'font-size:14px']) !!}
                     {!! Form::select('roles', $roles, null, ['class' => 'form-control form-control-sm']) !!}
                 </div>
 

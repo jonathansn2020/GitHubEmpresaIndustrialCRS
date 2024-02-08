@@ -27,6 +27,7 @@ class StoreUser extends FormRequest
             'name'     => 'required',            
             'email'    => 'required|email|unique:users',            
             'password' => 'required|min:6|confirmed',
+            'role'     => 'required'
         ];
        
         if ($this->hasFile('profile_photo_path')){
@@ -42,7 +43,8 @@ class StoreUser extends FormRequest
             'name'                  => 'nombre de usuario',            
             'email'                 => 'email',            
             'password'              => 'password',
-            'profile_photo_path'    => 'foto de perfil'
+            'profile_photo_path'    => 'foto de perfil',
+            'role'                  => 'rol'
         ];
 
     }

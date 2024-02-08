@@ -21,7 +21,9 @@ class UserController extends Controller
     public function index()
     {        
         
-        return view('users.index');
+        $roles = Role::select('id','name')->orderBy('name')->get();       
+
+        return view('users.index', compact('roles'));
     }
 
     public function listusers()
@@ -64,6 +66,7 @@ class UserController extends Controller
             'profile_photo_path'    => $url
         ]);     
                
+        $user->roles()->sync($request->role);
 
         return response()->json(['message' => "Se registro el usuario $user->name con exito!"]);
     }
@@ -105,7 +108,8 @@ class UserController extends Controller
         $user->roles()->sync($request->roles);
 
         $user->update([
-            'name' => $request->input('name')            
+            'name'  => $request->input('name'),
+            'email' => $request->input('email')  
         ]);
 
         return redirect()->route('users.edit', $user)->with('info', "El Usuario se actualizó satisfactoriamente");       

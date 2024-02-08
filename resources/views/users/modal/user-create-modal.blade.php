@@ -56,6 +56,23 @@
                             </div>
                         </div>   
                         <div class="col mb-3 col-12">
+                            <label for="password_confirmation" class="col-form-label col-form-label-sm">Rol:</label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <div class="input-group-text style-icon-fas">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <select name="role" id="role" class="form-control form-control-sm">
+                                    <option value="">Seleccionar...</option>
+                                    @foreach($roles as $role)
+                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                    @endforeach
+                                </select>                                
+                            </div>
+                            <small style="font-size:12.5px" id="role-error"></small>
+                        </div>   
+                        <div class="col mb-3 col-12">
                             <label for="profile_photo_path" class="col-form-label col-form-label-sm">Subir imagen:</label>
                             <div class="input-group">
                                 <div class="input-group-append">
@@ -65,8 +82,7 @@
                                 </div>
                                 <input type="file" name="profile_photo_path" id="profile_photo_path" class="form-control form-control-sm" accept="image/*">
                             </div>
-                            <small style="font-size:12.5px" id="profile_photo_path-error"></small>
-                            
+                            <small style="font-size:12.5px" id="profile_photo_path-error"></small>                            
                         </div>                     
                     </div>
                 </form>

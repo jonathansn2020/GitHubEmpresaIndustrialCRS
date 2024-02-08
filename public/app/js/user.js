@@ -93,8 +93,9 @@ function add_user() {
     data.append('email', $('#email').val());
     data.append('password', $('#password').val());
     data.append('password_confirmation', $('#password_confirmation').val());
+    data.append('role', $('#role').val());
     data.append('profile_photo_path', $('#profile_photo_path')[0].files[0]);   
-
+    
     $.ajax({
         method: 'POST',        
         url: '/user',
@@ -110,7 +111,7 @@ function add_user() {
         statusCode: {
             422: function (response) {
                 let validacion = [
-                    'name', 'email', 'password','profile_photo_path'
+                    'name', 'email', 'password', 'role', 'profile_photo_path'
                 ];             
                                
                 let errors = response.responseJSON.errors;
