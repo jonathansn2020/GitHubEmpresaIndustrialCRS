@@ -70,9 +70,13 @@ class User extends Authenticatable
         $user = User::with('roles')
                     ->where('id', auth()->user()->id)
                     ->get();        
-       
+        
         if(ucfirst($user[0]->roles[0]->name) == "Cliente"){
             return asset('images/iconos/cliente.jpg');
+        }        
+
+        if(ucfirst($user[0]->roles[0]->name) != "Cliente" && $user[0]->profile_photo_path == ""){
+            return asset('images/iconos/usuario_default.png');
         }
         else{            
             $photo = $user[0]->profile_photo_path;
